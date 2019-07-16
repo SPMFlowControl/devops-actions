@@ -46,9 +46,14 @@ if [ -n "$SLACK_TOKEN" ] && [ -n "$SLACK_CHANNEL" ]; then
   RUN_CMD="$RUN_CMD --slacktoken $SLACK_TOKEN --slackchannel '$SLACK_CHANNEL'"
 fi
 
-# Determine if we want to use Jest
+# Determine if we want to use Jest in Standard mode
 if [ -n "$JEST" ]; then
   RUN_CMD="$RUN_CMD --jest"
+fi
+
+# Determine if we want to use Jest in CRA Mode
+if [ -n "$JESTCRA" ]; then
+  RUN_CMD="$RUN_CMD --jestCRA"
 fi
 
 # Determine if we want to use Jest

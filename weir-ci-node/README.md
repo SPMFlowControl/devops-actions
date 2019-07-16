@@ -22,7 +22,8 @@ If any of the options below are not included then the respective option will not
 |`SLACK_CHANNEL`|`#devops`|Valid Slack channel for your workspace.|✅|
 |`ZAP_TARGET_URL`|`http://localhost/`|URL to perform the [Zed Attack Proxy](https://developers.weir/docs/guides/zap-guide.html) `active-scan` on.|✅|
 |`RETIRE`|`true`|Use [Retire.js](https://retirejs.github.io/retire.js/) to scan for component vulnerabilities.|✅|
-|`JEST`|`true`|Run [Jest](https://jestjs.io/) unit tests on the project.|✅|
+|`JEST`|`true`|Run [Jest](https://jestjs.io/) unit tests on a standard project.|✅|
+|`JESTCRA`|`true`|Run [Jest](https://jestjs.io/) unit tests on a create-react-app project. Do not use `JEST` while using this option!|✅|
 |`CYPRESS_KEY`|`XXXXXXXXX`|Run [Cypress](https://cypress.io) E2E tests on the project.|✅|
 
 ### Environment variables
