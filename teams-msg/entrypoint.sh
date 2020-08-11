@@ -13,11 +13,11 @@ if [ -z "$TEAMS_COLOR" ]; then
 fi
 
 if [ -z "$TEAMS_TITLE" ]; then
-  export TEAMS_TITLE="GitHub Action"
+  export TEAMS_TITLE="GitHub Actions"
 fi
 
 if [ -z "$TEAMS_SUBTITLE" ]; then
-  export TEAMS_SUBTITLE="GitHub Actions for $GITHUB_REPOSITORY"
+  export TEAMS_SUBTITLE="$GITHUB_REPOSITORY"
 fi
 
 if [ -z "$TEAMS_IMAGE" ]; then
