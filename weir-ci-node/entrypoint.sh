@@ -41,6 +41,11 @@ if [ -n "$RETIRE" ]; then
   RUN_CMD="$RUN_CMD --retire"
 fi
 
+# If the TEAMS_WEBHOOK were given then append to RUN_CMD
+if [ -n "$TEAMS_WEBHOOK" ]; then
+  RUN_CMD="$RUN_CMD --teamswebhook $TEAMS_WEBHOOK"
+fi
+
 # If the SLACK_TOKEN and SLACK_CHANNEL were given then append to RUN_CMD
 if [ -n "$SLACK_TOKEN" ] && [ -n "$SLACK_CHANNEL" ]; then
   RUN_CMD="$RUN_CMD --slacktoken $SLACK_TOKEN --slackchannel '$SLACK_CHANNEL'"
