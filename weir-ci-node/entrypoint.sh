@@ -9,6 +9,8 @@ if [ -z "$OAUTH_TOKEN" ]; then
   exit 1
 fi
 
+npm install git+https://$OAUTH_TOKEN:x-oauth-basic@github.com/weirgroup/weir-ci-node.git
+
 if [ -n "$RETIRE" ]; then
 echo 'Installing retire and wait-on...'
 npm install -g retire wait-on
@@ -62,6 +64,7 @@ fi
 # Determine if we want to use Cypress.io
 if [ -n "$CYPRESS_KEY" ]; then
   RUN_CMD="$RUN_CMD --cypress $CYPRESS_KEY"
+  npm install cypress
 fi
 
 # Determine if we want to use ZAP
