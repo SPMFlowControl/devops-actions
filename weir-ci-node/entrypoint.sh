@@ -41,7 +41,6 @@ if [ -n "$RETIRE" ]; then
   RUN_CMD="$RUN_CMD --retire"
 fi
 
-
 # If the TEAMS_WEBHOOK is given then append to RUN_CMD
 if [ -n "$TEAMS_WEBHOOK" ]; then
   RUN_CMD="$RUN_CMD --teamswebhook $TEAMS_WEBHOOK"
@@ -62,10 +61,10 @@ if [ -n "$JESTCRA" ]; then
   RUN_CMD="$RUN_CMD --jestCRA"
 fi
 
-# Determine if we want to use Jest
+# Determine if we want to use Cypress.io
 if [ -n "$CYPRESS_KEY" ]; then
   RUN_CMD="$RUN_CMD --cypress $CYPRESS_KEY"
-  echo 'Installing Cypress...'
+  echo 'Installing Cypress.io...'
   npm install cypress --no-save
 fi
 
@@ -85,5 +84,4 @@ fi
 echo 'Running WEIR-CI-NODE tool...'
 eval "$RUN_CMD"
 # node_modules/.bin/weir-ci-node run --projectpath ./ --reportspath ./results/ --retire --slacktoken $SLACK_TOKEN --slackchannel $SLACK_CHANNEL --cypress $CYPRESS_KEY --zappath $ZAP_PATH --zapurl http://localhost:8088/
-npm uninstall weir-ci-node
-exit 0
+exit $?
