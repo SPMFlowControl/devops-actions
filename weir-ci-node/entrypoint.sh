@@ -64,8 +64,6 @@ fi
 # Determine if we want to use Cypress.io
 if [ -n "$CYPRESS_KEY" ]; then
   RUN_CMD="$RUN_CMD --cypress $CYPRESS_KEY"
-  echo 'Installing Cypress.io...'
-  npm install cypress --no-save
 fi
 
 # Determine if we want to use ZAP
