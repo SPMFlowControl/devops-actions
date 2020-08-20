@@ -9,8 +9,6 @@ if [ -z "$OAUTH_TOKEN" ]; then
   exit 1
 fi
 
-npm install git+https://$OAUTH_TOKEN:x-oauth-basic@github.com/weirgroup/weir-ci-node.git
-
 if [ -n "$RETIRE" ]; then
 echo 'Installing retire and wait-on...'
 npm install -g retire wait-on
