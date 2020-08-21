@@ -5,7 +5,7 @@ echo 'Initializing the Weir-CI-Node Action...'
 
 echo 'Installing the Weir-CI-Node Tool...'
 if [ -z "$OAUTH_TOKEN" ]; then
-  echo 'An oauth token was not supplied.'
+  echo 'An OAuth token was not supplied.'
   exit 1
 fi
 
@@ -64,7 +64,6 @@ fi
 # Determine if we want to use Cypress.io
 if [ -n "$CYPRESS_KEY" ]; then
   RUN_CMD="$RUN_CMD --cypress $CYPRESS_KEY"
-  npm install cypress --prefix $PROJECT_PATH
 fi
 
 # Determine if we want to use ZAP
