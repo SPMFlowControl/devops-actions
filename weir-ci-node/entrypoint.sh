@@ -9,7 +9,7 @@ if [ -z "$OAUTH_TOKEN" ]; then
   exit 1
 fi
 
-npm install git+https://$OAUTH_TOKEN:x-oauth-basic@github.com/weirgroup/weir-ci-node.git
+npm install git+https://$OAUTH_TOKEN:x-oauth-basic@github.com/SPMFlowControl/spm-ci-node.git
 
 if [ -n "$RETIRE" ]; then
 echo 'Installing retire and wait-on...'
